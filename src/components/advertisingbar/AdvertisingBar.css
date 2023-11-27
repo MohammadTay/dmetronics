@@ -1,0 +1,22 @@
+/* AdvertisingBar.css */
+
+.advertising-bar {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .advertising-bar {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .advertising-bar {
+      font-size: 12px;
+    }
+  }
+  
