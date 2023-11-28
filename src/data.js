@@ -1,74 +1,167 @@
+import { Bosch, Continental, Delphi, Denso, Efi, Gmpt, MagnetiMarelli, Motorola, Phoenix, Sagem, Siemens, Temic, Trw, Visteon, X } from "./SubData"
+
  export const softwares = [
     {
       "id": 1,
-      "image": "ss1.jpeg",
-      "name": "Product 1",
-      "description": "Description for Product 1",
-      "price": 49.99
+      "image": "/software/adb blue removal.png",
+      "description": "adb blue removal",
     },
     {
       "id": 2,
-      "image": "ss2.jpeg",
-      "name": "Product 2",
-      "description": "Description for Product 2",
-      "price": 29.99
+      "image": "/software/back_to_original.png",
+      "description": "back_to_original.png",
     },
     {
       "id": 3,
-      "image": "url_to_image_3",
-      "name": "Product 3",
-      "description": "Description for Product 3",
-      "price": 59.99
+      "image": "/software/boost sensor.png",
+      "description": "boost sensor",
     },
     {
       "id": 4,
-      "image": "url_to_image_4",
-      "name": "Product 4",
-      "description": "Description for Product 4",
-      "price": 39.99
+      "image": "public/software/checksum correction.png",
+      "description": "check sum correction",
     },
     {
       "id": 5,
-      "image": "url_to_image_5",
-      "name": "Product 5",
-      "description": "Description for Product 5",
-      "price": 79.99
+      "image": "public/software/cold_start_noise.png",
+      "description": "cold start noise removal",
     },
     {
       "id": 6,
-      "image": "url_to_image_6",
-      "name": "Product 6",
-      "description": "Description for Product 6",
-      "price": 99.99
+      "image": "public/software/display-sportivi.png",
+      "description": "display sport",
     },
     {
       "id": 7,
-      "image": "url_to_image_7",
-      "name": "Product 7",
-      "description": "Description for Product 7",
-      "price": 49.99
+      "image": "public/software/dpf removal.png",
+      "description": "dpf removal",
     },
     {
       "id": 8,
-      "image": "url_to_image_8",
-      "name": "Product 8",
-      "description": "Description for Product 8",
-      "price": 69.99
+      "image": "public/software/dsg ecu.png",
+      "description": "dsg ecu",
     },
     {
       "id": 9,
-      "image": "url_to_image_9",
-      "name": "Product 9",
-      "description": "Description for Product 9",
-      "price": 89.99
+      "image": "public/software/dtc detection.png",
+      "description": "dtc detection",
     },
     {
       "id": 10,
-      "image": "url_to_image_10",
-      "name": "Product 10",
-      "description": "Description for Product 10",
-      "price": 59.99
-    }
+      "image": "public/software/egr removal.png",
+      "description": "egr removal",
+    },
+    {
+      "id": 11,
+      "image": "public/software/evap-evaporation.png",
+      "description": "evaporation",
+    },
+    {
+      "id": 12,
+      "image": "public/software/exhaust-flap.png",
+      "description": "exhaust-flap",
+    },
+    {
+      "id": 13,
+      "image": "public/software/flaps swirl.png",
+      "description": "flap swirl",
+    },
+    {
+      "id": 14,
+      "image": "public/software/gpf.png",
+      "description": "gpf",
+    },
+    {
+      "id": 15,
+      "image": "public/software/hot start fix.png",
+      "description": "hot start fix",
+    },
+    {
+      "id": 16,
+      "image": "public/software/ico-cambio-automatico-1-80x80-1.png",
+      "description": "camb automatic",
+    },
+    {
+      "id": 17,
+      "image": "public/software/ico-mappatura-power-80x80-1.png",
+      "description": "map power",
+    },
+    {
+      "id": 18,
+      "image": "public/software/ico-rimozione-dpf-fap-80x80-1.png",
+      "description": "rim zone",
+    },
+    {
+      "id": 19,
+      "image": "public/software/immo off edc17.png",
+      "description": "immo off edc 17",
+    },
+    {
+      "id": 20,
+      "image": "public/software/immo off.png",
+      "description": "immo off",
+    },
+    {
+      "id": 21,
+      "image": "public/software/lambda o2.png",
+      "description": "lambda oxygen2",
+    },
+    {
+      "id": 22,
+      "image": "public/software/launch control.png",
+      "description": "launch control",
+    },
+    {
+      "id": 23,
+      "image": "public/software/maf removal.png",
+      "description": "maf removal",
+    },
+    {
+      "id": 24,
+      "image": "public/software/obd reading.png",
+      "description": "obd reading",
+    },
+    {
+      "id": 25,
+      "image": "public/software/professional tuning ).png",
+      "description": "professional tuning",
+    },
+    {
+      "id": 26,
+      "image": "public/software/readiness_calibration.png",
+      "description": "readiness calibration",
+    },
+    {
+      "id": 27,
+      "image": "public/software/revlimit popcorn.png",
+      "description": "revlimit popcorn",
+    },
+    {
+      "id": 28,
+      "image": "public/software/sap secondary airpump.png",
+      "description": "sap secondary airpump",
+    },
+    {
+      "id": 29,
+      "image": "public/software/speed limiter.png",
+      "description": "speed limiter",
+    },
+    {
+      "id": 30,
+      "image": "public/software/start stop disable.png",
+      "description": "start stop disable",
+    },
+    {
+      "id": 31,
+      "image": "public/software/torque monitoring.png",
+      "description": "torque monitoring",
+    },
+    {
+      "id": 32,
+      "image": "public/software/tva removal.png",
+      "description": "tva removal",
+    },
+  
   ]
 
   export const electronics = [
@@ -220,77 +313,103 @@
     export const pinouts= [
         {
           "id": 1,
-          "image": "https://example.com/pinouts/pinout1.jpg",
-          "name": "USB Pinout",
-          "description": "Pin configuration for USB connectors, including USB-A, USB-B, and USB-C.",
-          "price": 9.99
+          "name": "Bosch",
+          "description": null,
+          "item":Bosch
         },
         {
           "id": 2,
-          "image": "https://example.com/pinouts/pinout2.jpg",
-          "name": "Ethernet Cable Pinout",
-          "description": "Pinout diagram for Ethernet cables (RJ45) used in networking.",
-          "price": 7.99
+          "name": "Motorola",
+          "description": null,
+          "item":Motorola
         },
         {
           "id": 3,
-          "image": "https://example.com/pinouts/pinout3.jpg",
-          "name": "Arduino Pinout",
-          "description": "Pin configuration for popular Arduino development boards.",
-          "price": 5.99
+          "name": "Temic",
+          "description": null,
+          "item":Temic
         },
         {
           "id": 4,
-          "image": "https://example.com/pinouts/pinout4.jpg",
-          "name": "Raspberry Pi GPIO Pinout",
-          "description": "Pinout diagram for the General Purpose Input/Output pins on Raspberry Pi.",
-          "price": 8.99
+          "name": "Efi",
+          "description": null,
+          "item":Efi
         },
         {
           "id": 5,
-          "image": "https://example.com/pinouts/pinout5.jpg",
-          "name": "HDMI Pinout",
-          "description": "Pin configuration for HDMI connectors used in audio/video equipment.",
-          "price": 6.99
+          "name": "Gmpt",
+          "description": null,
+          "item":Gmpt
         },
         {
           "id": 6,
-          "image": "https://example.com/pinouts/pinout6.jpg",
-          "name": "Serial Port Pinout (RS-232)",
-          "description": "Pinout for RS-232 serial communication ports.",
-          "price": 10.99
+          "name": "Trw",
+          "description": null,
+          "item":Trw
         },
         {
           "id": 7,
-          "image": "https://example.com/pinouts/pinout7.jpg",
-          "name": "Microcontroller IC Pinout",
-          "description": "Pin configuration for various microcontroller ICs.",
-          "price": 12.99
+          "name": "Phoenix",
+          "description": null,
+          "item":Phoenix
         },
         {
           "id": 8,
-          "image": "https://example.com/pinouts/pinout8.jpg",
-          "name": "VGA Pinout",
-          "description": "Pin configuration for VGA connectors used in computer monitors.",
-          "price": 7.99
+          "name": "Continental",
+          "description": null,
+          "item":Continental
         },
         {
           "id": 9,
-          "image": "https://example.com/pinouts/pinout9.jpg",
-          "name": "Audio Jack Pinout",
-          "description": "Pinout for common audio jacks, including 3.5mm and 1/4 inch.",
-          "price": 4.99
+          "name": "Sagem",
+          "description": null,
+          "item":Sagem
         },
         {
           "id": 10,
-          "image": "https://example.com/pinouts/pinout10.jpg",
-          "name": "SPI (Serial Peripheral Interface) Pinout",
-          "description": "Pin configuration for SPI communication protocol.",
-          "price": 8.99
-        }
+          "name": "Denso",
+          "description": null,
+          "item":Denso
+        },
+        {
+          "id": 11,
+          "name": "Visteon",
+          "description": null,
+          "item":Visteon
+        },
+        {
+          "id": 12,
+          "name": "Siemens",
+          "description": null,
+          "item":Siemens
+        },
+        {
+          "id": 13,
+          "name": "Delphi",
+          "description": null,
+          "item":Delphi
+        },
+        {
+          "id": 14,
+          "name": "Magneti_Marelli",
+          "description": null,
+          "item":MagnetiMarelli
+        },
+        {
+          "id": 15,
+          "name": "X",
+          "description": null,
+          "item":X
+          
+        }, 
+        {
+          "id": 16,
+          "name": "X Constructeur automobile",
+          "description": null
+        },
+      
       ]
-    
-    
+      
       export const tutorials=[
           {
             "id": 1,

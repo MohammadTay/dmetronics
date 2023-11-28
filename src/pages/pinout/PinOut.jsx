@@ -1,10 +1,11 @@
 import React from 'react'
-import ProductList from '../../components/productlist/ProductList'
 import { pinouts } from '../../data';
+import FolderList from '../../components/folderlist/FolderList';
+
 
 const PinOut = () => {
   return (
-   <ProductList products={pinouts} index={"pinout"}/>
+   <FolderList folders={pinouts} />
   )
 }
 

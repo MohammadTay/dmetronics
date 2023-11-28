@@ -1,0 +1,29 @@
+/* folderList.css */
+
+.img-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .img-item {
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .img-item img {
+    max-width: 80px;
+    height: 120px;
+  }
+  
+  /* Responsive CSS */
+  @media (max-width: 768px) {
+    .img-item {
+      width: 100%;
+    }
+  }
+  

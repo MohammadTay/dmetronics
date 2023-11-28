@@ -11,7 +11,7 @@ const ProductList = ({ products, index}) => {
       {products.map(product => (
       <Link to={`/${index}/${product.id}`} key={product.id}>
         <div  className="product-item">
-          <img src={product?.image} alt={product.name} />
+         {product.image && <img src={product?.image} alt={product.name} />}
           <h3>{product.name}</h3>
           <p>{product.description}</p>
           {product.price && <p className="price">${product?.price}</p>}

@@ -18,8 +18,10 @@ import SingleWiringDiagram from "./pages/wiringdiagram/SingleWiringDiagram";
 import Download from "./pages/downloads/Download";
 import SingleTutorial from "./pages/tutorials/SingleTutorial";
 import SingleHardware from "./pages/hardware/SingleHardware";
-import SinglePinOut from "./pages/pinout/SinglePinOut";
 import Chat from "./components/chat/Chat";
+import PinOutName from "./pages/pinout/PinOutName";
+import PinOutImg from "./pages/pinout/PinOutImg";
+import Test from "./pages/test/Test";
 
 function App() {
   const Layout = () => {
@@ -42,7 +44,6 @@ function App() {
           path: "/",
           element: <Home />,
         }, 
-      
         {
           path: "/softwarepage",
           element: <Software />,
@@ -72,15 +73,19 @@ function App() {
           path: "/tutorials/:id",
           element: <SingleTutorial />,
         },
-        
         {
-          path: "/pinout",
+          path: "/pinout/",
           element: <PinOut />,
         },
         {
-          path: "/pinout/:id",
-          element: <SinglePinOut />,
+          path: "/pinout/:name",
+          element: <PinOutName />,
         },
+        {
+          path: "/pinout/:name/:name",
+          element: <PinOutImg />,
+        },
+       
         {
           path: "/hardware",
           element: <Hardware />,
@@ -89,8 +94,10 @@ function App() {
           path: "/hardware/:id",
           element: <SingleHardware />,
         },
-      
-      
+        {
+          path: "/test",
+          element: <Test />,
+        },
       ],
     },
     {
