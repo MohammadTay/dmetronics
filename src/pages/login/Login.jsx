@@ -2,30 +2,36 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase";
+import newRequest from '../../utils/Request'
 
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate()
-  const handleLogin = async (e) => {
-    await signInWithEmailAndPassword(auth, email, password);
-    navigate("/")
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await newRequest.post("/auth/login", { username, password })
+      localStorage.setItem("DMEUser", JSON.stringify(res.data))
+      navigate('/')
+    } catch (err) {
+      setError(err.res.data)
 
+    }
   };
 
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
-          email:
+          username:
           <input
             type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </label>
         <label>
@@ -36,7 +42,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </label>
-        <button type="button" onClick={handleLogin}>
+        <button type="submit">
           Login
         </button>
       </form>

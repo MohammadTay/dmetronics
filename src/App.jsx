@@ -21,18 +21,27 @@ import SingleHardware from "./pages/hardware/SingleHardware";
 import Test from "./pages/test/Test";
 import Chat from "./pages/chat/Chat";
 import SinglePinOut from "./pages/pinout/SinglePinOut";
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
+
 
 function App() {
+  const queryClient = new QueryClient()
 
 
   const Layout = () => {
     return (
 
       <div className="app">
-        <AdvertisingBar />
-        <Navbar />
-        <Outlet />
-        <Footer />
+        <QueryClientProvider client={queryClient}>
+          <AdvertisingBar />
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </QueryClientProvider>
       </div>
 
     );
@@ -98,21 +107,22 @@ function App() {
           path: "/test",
           element: <Test />,
         },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/chat",
+          element: <Chat />,
+        },
 
       ],
     },
-    {
-      path: "/register",
-      element: <Register />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/chat",
-      element: <Chat />,
-    },
+
 
   ]);
 

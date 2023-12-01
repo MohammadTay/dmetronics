@@ -1,39 +1,48 @@
 // src/Register.js
 import React, { useState } from 'react';
 import './Register.css';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, db } from '../../firebase';
-import { doc, setDoc } from 'firebase/firestore';
+import upload from '../../utils/upload'
 import { useNavigate } from 'react-router-dom';
+import newRequest from '../../utils/Request'
 
 const Register = () => {
-    const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
+    const [file, setFile] = useState(null);
+    const [user, setUser] = useState({
+        username: "",
+        email: "",
+        password: "",
+        img: "",
+        country: "",
+        desc: "",
+        phone: ""
     });
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        setUser((prev) => {
+            return { ...prev, [e.target.name]: e.target.value };
+        });
     };
+    // const handleSeller = (e) => {
+    //     setUser((prev) => {
+    //       return { ...prev, isSeller: e.target.checked };
+    //     });
+    //   };
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // Add registration logic here
-        console.log('Registration data:', formData);
-        console.log(Object.entries(formData)[0][1]);
-        const firstName = Object.entries(formData)[0][1]
-        const lastName = Object.entries(formData)[1][1]
-        const email = Object.entries(formData)[2][1]
-        const password = Object.entries(formData)[3][1]
-        const res = await createUserWithEmailAndPassword(auth, email, password)
-        await setDoc(doc(db, "dme", res.user.uid),
-            { firstName, lastName, email, password }
-        )
-        await setDoc(doc(db, "dmechats", res.user.uid), {})
+        const url = await upload(file);
+        try {
+            await newRequest.post("/auth/register", {
+                ...user,
+                img: url,
+            });
+            navigate("/login")
+        } catch (err) {
+            console.log(err);
+        }
         navigate("/")
     };
 
@@ -41,20 +50,10 @@ const Register = () => {
         <div className="register-container">
             <form onSubmit={handleSubmit} className="register-form">
                 <label>
-                    First Name:
+                    UserName:
                     <input
                         type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Last Name:
-                    <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
+                        name="username"
                         onChange={handleChange}
                     />
                 </label>
@@ -63,7 +62,6 @@ const Register = () => {
                     <input
                         type="email"
                         name="email"
-                        value={formData.email}
                         onChange={handleChange}
                     />
                 </label>
@@ -72,14 +70,57 @@ const Register = () => {
                     <input
                         type="password"
                         name="password"
-                        value={formData.password}
                         onChange={handleChange}
                     />
                 </label>
+                <label>
+                    Image:
+                    <input
+                        type="file"
+                        name="img"
+                        onChange={(e) => setFile(e.target.files[0])}
+                    />
+                </label>
+                <label>
+                    Country:
+                    <input
+                        type="text"
+                        name="country"
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Phone:
+                    <input
+                        type="text"
+                        name="phone"
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Description:
+                    <input
+                        type="text"
+                        name="desc"
+                        onChange={handleChange}
+                    />
+                </label>
+                {/* <label className="switch">
+              <input type="checkbox" onChange={handleSeller} />
+              <span className="slider round"></span>
+            </label> */}
                 <button type="submit">Register</button>
             </form>
         </div>
     );
 };
 
+// "username":"ttttt",
+// "email":"ttttt@mail.com",
+//  "password":"123456",
+//   "img":"kjljhsdlkj",
+//    "country":"kjjk",
+//     "phone":"jjlkh",
+//      "desc":"klnjlkj",
+//       "isSeller":false
 export default Register;

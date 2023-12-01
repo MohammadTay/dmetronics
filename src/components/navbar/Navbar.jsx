@@ -2,16 +2,28 @@
 
 import React, { useContext, useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import newRequest from '../../utils/Request';
 
 
 const Navbar = () => {
+  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const currentUser = JSON.parse(localStorage.getItem("DMEUser"))
+  const handleLogout = async (e) => {
+    try {
+      await newRequest.post("auth/logout")
+      localStorage.setItem("DMEUser", null)
+      navigate('/')
+    } catch (err) {
+      console.log(err);
+    }
+  }
   return (
     <nav className="navbar">
       <div className="brand">
@@ -33,8 +45,19 @@ const Navbar = () => {
         <Link to={'/tutorials'}><li>Tutorials </li></Link>
         <Link to={'downloads'}><li>Downloads</li></Link>
         <Link to={'upload'}><li>Uploads</li></Link>
-        <Link to={'register'}><li>register</li></Link>
-        <Link to={'login'}><li>login</li></Link>
+        {currentUser ?
+          (
+            <>
+              <Link to={''}><li>{currentUser.username}</li></Link>
+              <Link onClick={handleLogout}><li>logout</li></Link>
+            </>)
+          :
+          (
+            <>
+              <Link to={'register'}><li>register</li></Link>
+              <Link to={'login'}><li>login</li></Link>
+            </>)
+        }
       </ul>
     </nav>
   );

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { initializeApp } from "firebase/app";
 
 import { storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
