@@ -18,20 +18,23 @@ import SingleWiringDiagram from "./pages/wiringdiagram/SingleWiringDiagram";
 import Download from "./pages/downloads/Download";
 import SingleTutorial from "./pages/tutorials/SingleTutorial";
 import SingleHardware from "./pages/hardware/SingleHardware";
-import Chat from "./components/chat/Chat";
-import PinOutName from "./pages/pinout/PinOutName";
-import PinOutImg from "./pages/pinout/PinOutImg";
 import Test from "./pages/test/Test";
+import Chat from "./pages/chat/Chat";
+import SinglePinOut from "./pages/pinout/SinglePinOut";
 
 function App() {
+
+
   const Layout = () => {
     return (
+
       <div className="app">
-        <AdvertisingBar/>
+        <AdvertisingBar />
         <Navbar />
         <Outlet />
         <Footer />
       </div>
+
     );
   };
 
@@ -43,7 +46,7 @@ function App() {
         {
           path: "/",
           element: <Home />,
-        }, 
+        },
         {
           path: "/softwarepage",
           element: <Software />,
@@ -54,17 +57,17 @@ function App() {
         },
         {
           path: "/wiringdiagram",
-          element:  <WiringDiagram />,
+          element: <WiringDiagram />,
         },
         {
           path: "/wiringdiagram/:id",
-          element:  <SingleWiringDiagram />,
+          element: <SingleWiringDiagram />,
         },
         {
           path: "/downloads",
-          element: <Download/>,
+          element: <Download />,
         },
-      
+
         {
           path: "/tutorials",
           element: <Tutorials />,
@@ -78,14 +81,11 @@ function App() {
           element: <PinOut />,
         },
         {
-          path: "/pinout/:name",
-          element: <PinOutName />,
+          path: "/pinout/:id",
+          element: <SinglePinOut />,
         },
-        {
-          path: "/pinout/:name/:name",
-          element: <PinOutImg />,
-        },
-       
+
+
         {
           path: "/hardware",
           element: <Hardware />,
@@ -98,6 +98,7 @@ function App() {
           path: "/test",
           element: <Test />,
         },
+
       ],
     },
     {
@@ -112,6 +113,7 @@ function App() {
       path: "/chat",
       element: <Chat />,
     },
+
   ]);
 
   return <RouterProvider router={router} />;

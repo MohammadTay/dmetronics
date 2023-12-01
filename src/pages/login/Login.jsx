@@ -1,16 +1,19 @@
 // Login.js
 import React, { useState } from 'react';
-import {  useNavigate } from 'react-router-dom';
 import './Login.css';
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-const navigate=useNavigate()
-  const handleLogin = () => {
-    // Add your authentication logic here
-    // For simplicity, I'm just redirecting to a home page
-    navigate('/home');
+  const navigate = useNavigate()
+  const handleLogin = async (e) => {
+    await signInWithEmailAndPassword(auth, email, password);
+    navigate("/")
+
   };
 
   return (
@@ -18,11 +21,11 @@ const navigate=useNavigate()
       <h2>Login</h2>
       <form>
         <label>
-          Username:
+          email:
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label>
