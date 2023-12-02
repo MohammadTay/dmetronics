@@ -18,6 +18,9 @@ const Tutorials = () => {
 
   return (
     <>
+      <span className="breadcrumbs">Tutorials  </span>
+      <h1>please choose your tutorial</h1>
+      <p>     Explore the         </p>
       {isPending ? "pending" : error ? " something wrong" : <ProductList products={data} index={"tutorials"} />}
     </>
   )

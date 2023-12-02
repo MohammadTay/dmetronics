@@ -19,6 +19,9 @@ const Software = () => {
   })
   return (
     <>
+      <span className="breadcrumbs">Software  </span>
+      <h1>please choose your software</h1>
+      <p>     Explore the         </p>
       {isPending ? "pending " : error ? "something wrong " :
         <ProductList products={data} index={"software"} />}
     </>

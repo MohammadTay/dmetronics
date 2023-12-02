@@ -4,6 +4,8 @@ import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import newRequest from '../../utils/Request';
+import { FaShoppingCart } from "react-icons/fa";
+
 
 
 const Navbar = () => {
@@ -48,6 +50,8 @@ const Navbar = () => {
         {currentUser ?
           (
             <>
+
+              <Link><FaShoppingCart className='shopicon' /> </Link>
               <Link to={''}><li>{currentUser.username}</li></Link>
               <Link onClick={handleLogout}><li>logout</li></Link>
             </>)

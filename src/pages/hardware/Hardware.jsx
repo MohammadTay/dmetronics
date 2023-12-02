@@ -19,6 +19,9 @@ const Hardware = () => {
 
   return (
     <>
+      <span className="breadcrumbs">Hardware</span>
+      <h1>please choose your product</h1>
+      <p>    Explore the         </p>
       {isPending ? " pending" : error ? "something wrong " :
         <ProductList products={data} index={"hardware"} />}
     </>

@@ -115,12 +115,5 @@ const Register = () => {
     );
 };
 
-// "username":"ttttt",
-// "email":"ttttt@mail.com",
-//  "password":"123456",
-//   "img":"kjljhsdlkj",
-//    "country":"kjjk",
-//     "phone":"jjlkh",
-//      "desc":"klnjlkj",
-//       "isSeller":false
+
 export default Register;

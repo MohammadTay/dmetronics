@@ -26,6 +26,9 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
+import Order from "./pages/order/Order";
+import MyCart from "./pages/mycart/MyCart";
+import Upload from "./pages/uploads/Upload";
 
 
 function App() {
@@ -76,6 +79,10 @@ function App() {
           path: "/downloads",
           element: <Download />,
         },
+        {
+          path: "/upload",
+          element: <Upload />,
+        },
 
         {
           path: "/tutorials",
@@ -93,8 +100,6 @@ function App() {
           path: "/pinout/:id",
           element: <SinglePinOut />,
         },
-
-
         {
           path: "/hardware",
           element: <Hardware />,
@@ -116,8 +121,16 @@ function App() {
           element: <Login />,
         },
         {
-          path: "/chat",
+          path: "/chat/:id",
           element: <Chat />,
+        },
+        {
+          path: "/order",
+          element: <Order />,
+        },
+        {
+          path: "/mycart",
+          element: <MyCart />,
         },
 
       ],

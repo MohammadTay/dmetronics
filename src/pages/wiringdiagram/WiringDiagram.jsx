@@ -39,8 +39,7 @@ const WiringDiagram = () => {
       <div className="container">
         <span className="breadcrumbs">wiring  {">"}</span>
         <h1>please choose your wire pic</h1>
-        <p>
-          Explore the         </p>
+        <p>    Explore the         </p>
         <div className="menu">
           <div className="left">
             <span>for free </span>

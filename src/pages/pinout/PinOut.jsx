@@ -17,6 +17,9 @@ const PinOut = () => {
 
   return (
     <>
+      <span className="breadcrumbs">Pinout</span>
+      <h1>please choose your pinout</h1>
+      <p>     Explore the         </p>
       {isPending ? " pending " : error ? " something wrong" :
         <ProductList products={data} index={"pinout"} />}
     </>

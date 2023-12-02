@@ -2,6 +2,12 @@
 
 import React from 'react';
 import './Footer.css';
+import { FaFacebookSquare } from "react-icons/fa"
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa";
+
+
 
 const Footer = () => {
   return (
@@ -25,9 +31,10 @@ const Footer = () => {
           <div className="footer-section">
             <h2>Follow Us</h2>
             <div className="social-icons">
-              <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i></a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
-              <a href="#" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+              <FaFacebookSquare />
+              <FaInstagramSquare />
+              <FaSquareXTwitter />
+              <FaTiktok />
             </div>
           </div>
         </div>

@@ -1,76 +1,84 @@
 /* Navbar.css */
 
 
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-  }
-  
-  .brand {
-    font-size: 1.5rem;
-    display: flex;
-  }
-  .brand img{
-    width: 50px;
-    height: 50px;
-  }
-  .vertical-line {
-    border-left: 2px solid black; /* Change the color and thickness as needed */
-    height: 50px; /* Set the height of the line */
-    margin: 0 10px; /* Adjust the margin as needed */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
 }
-  
+
+.brand {
+  font-size: 1.5rem;
+  display: flex;
+}
+
+.brand img {
+  width: 50px;
+  height: 50px;
+}
+
+.vertical-line {
+  border-left: 2px solid black;
+  /* Change the color and thickness as needed */
+  height: 50px;
+  /* Set the height of the line */
+  margin: 0 10px;
+  /* Adjust the margin as needed */
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  text-decoration: underline;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+}
+
+.shopicon {
+  margin-right: 15px;
+}
+
+@media only screen and (max-width: 768px) {
   .menu {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  
-  .menu li:hover {
-    text-decoration: underline;
-  }
-  
-  .menu-icon {
     display: none;
     flex-direction: column;
-    cursor: pointer;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
   }
-  
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
+
+  .menu.open {
+    display: flex;
   }
-  
-  @media only screen and (max-width: 768px) {
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-    }
-  
-    .menu.open {
-      display: flex;
-    }
-  
-    .menu-icon {
-      display: flex;
-    }
+
+  .menu-icon {
+    display: flex;
   }
-  
+}

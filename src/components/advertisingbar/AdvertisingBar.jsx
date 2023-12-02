@@ -8,7 +8,13 @@ const AdvertisingBar = () => {
     <div className="advertising-bar">
       <marquee>
 
-      <p>Place your advertising content here!</p>
+
+        <div className="jumping-text-container">
+          <h1 className="jumping-text">Coming Soon</h1>
+        </div>
+
+
+
       </marquee>
     </div>
   );
